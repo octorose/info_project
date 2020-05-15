@@ -8,7 +8,7 @@ int main()
     char name[20];
     int age;
     float salary;
-    int id;
+    int id, n;
  
     /*  open for writing */
     fptr = fopen("emp.txt", "a");
@@ -18,7 +18,8 @@ int main()
         printf("File does not exists \n");
         return 0;
     }
-    printf("Donner son Id\n");
+    do{
+	printf("Donner son Id\n");
     scanf("%d",&id);
     printf("Enter the name \n");
     scanf("%s", name);
@@ -29,5 +30,13 @@ int main()
     printf("Enter the salary\n");
     scanf("%f", &salary);
     fprintf(fptr, "%d-Salary  = %.2f]\n", id,salary);
+    printf("Voulez vous ajouter un autre client: 1: Oui / 0: Non\n");
+    scanf("%d",&n);
+	}while(n!=0);
     fclose(fptr);
+    	// return to mainmenu
+	/*if(n==0)
+	{
+	system("menu.exe")
+	}*/
 }
